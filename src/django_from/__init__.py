@@ -213,12 +213,13 @@ class FromCompiler(SQLCompiler):
                     # Decrement the column count
                     self.col_count -= 1
 
-                    # The Value() placeholder we put it in encoded as a parameter.
-                    # We  want substitute that in now.
+                    # The placeholder(s) we put it in encoded are encoded parameters.
+                    # We  want substitute them in now.
                     placeholder = f"{a}_placeholder"
-                    params_index = params.index(placeholder)
-                    del params[params_index]
-                    sql = replace_nth(sql, '%s', f'"{a}"', params_index+1)
+                    while placeholder in params:
+                        params_index = params.index(placeholder)
+                        del params[params_index]
+                        sql = replace_nth(sql, '%s', f'"{a}"', params_index+1)
                 else:
                     raise ValueError(f'Epected annotation "{a}" in Django annotation_col_map and was disappointed.')
             else:
@@ -249,6 +250,7 @@ class FromCompiler(SQLCompiler):
         params = tuple(params)
 
         # print(super_sql % super_params)
+        # print(from_sql % from_params)
         # print(sql % params)
         return sql, params
 
