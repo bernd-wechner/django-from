@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: django_from
+Version: 0.2
+Summary: Build a queryset that selects from another queryset (queryset encapsulation)
+Home-page: https://github.com/bernd-wechner/django-from
+Author: Bernd Wechner
+Author-email: bwechner@yahoo.com
+License: Freely Distributable
+Project-URL: Bug Tracker, https://github.com/bernd-wechner/django-from/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django :: 3.2
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Dynamic: license-file
+
+# django-from
+
+Provides queryset encapsulation to get around Django's
+
+    Cannot compute Aggregate('field'): 'field' is an aggregate
+
+limitation. What Django currently lacks is queryset encapsulation, that
+is, the ability to build a queryset upon an encapsulated queryset. Or,
+in other words, put an existing queryset in the FROM clause of the SQL.
+
+Django's Queryset cannot select from Subqueries and builds queries through
+successive Joins only. And while Django supports Subqueries, it only supports 
+them as annotations (in the SELECT clause) not as a source (in the FROM clause).
+
+Because Django's QuerySest can be quite complicated this is a running
+experiment. Tested on a particular use case and functional but quite
+likely to break on some fancy query or other ...
