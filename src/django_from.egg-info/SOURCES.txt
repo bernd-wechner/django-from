@@ -9,5 +9,3 @@ src/django_from.egg-info/SOURCES.txt
 src/django_from.egg-info/dependency_links.txt
 src/django_from.egg-info/not-zip-safe
 src/django_from.egg-info/top_level.txt
-src/django_from/__pycache__/__init__.cpython-310.pyc
-src/django_from/__pycache__/__init__.cpython-312.pyc

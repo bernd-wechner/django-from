@@ -1,13 +1,13 @@
 Metadata-Version: 2.4
 Name: django_from
-Version: 0.1
+Version: 0.2
 Summary: Build a queryset that selects from another queryset (queryset encapsulation)
 Home-page: https://github.com/bernd-wechner/django-from
 Author: Bernd Wechner
 Author-email: bwechner@yahoo.com
+License: Freely Distributable
 Project-URL: Bug Tracker, https://github.com/bernd-wechner/django-from/issues
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: Freely Distributable
 Classifier: Operating System :: OS Independent
 Classifier: Development Status :: 3 - Alpha
 Classifier: Framework :: Django :: 3.2
